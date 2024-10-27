@@ -5,11 +5,19 @@ class Snowflake {
   float size;    
   float wind;      // Wind direction/strength
   
-  // Change values ro alter possible snow flake variations
-  Snowflake() {
+  float rangeX1, rangeX2, rangeY1, rangeY2; // area where it will be snowing
+  
+ 
+  Snowflake(float xRange1, float xRange2, float yRange1, float yRange2) {
     
-    x = random(width);   
-    y = random(-height, 0);         
+    rangeX1 = xRange1;
+    rangeX2 = xRange2;
+    rangeY1 = yRange1;
+    rangeY2 = yRange2;
+    
+     // Change values to alter possible snow flake variations
+    x = random(rangeX1, rangeX2);   
+    y = random(-height, rangeY1);         
     speed = random(1, 5);          
     size = random(2, 5);        
     wind = random(-0.5, 0.5);  
@@ -23,11 +31,11 @@ class Snowflake {
   y += speed;
   
   // Wrap around the edges
-  if (x > width) x = 0;
-  if (x < 0) x = width;
-  if (y > height) {
-    y = random(-100, 0);
-    x = random(width);
+  if (x > rangeX2) x = rangeX1;
+  if (x < rangeX1) x = rangeX2;
+  if (y > rangeY2) {
+    y = random(-height, rangeY1);
+    x = random(rangeX1, rangeX2);
   }
   
 }
@@ -37,8 +45,13 @@ void display() {
   noStroke();
   float alpha = map(sin(frameCount * 0.1 + x), -1, 1, 200, 255); // Varying brightness over time to give twinkling effect
   fill(255, alpha);
-  ellipse(x, y, size, size);
   
+  if( y >= rangeY1){ // Only display if snowflake is inside the window
+    
+    ellipse(x, y, size, size);
+  
+}
+
 }
 
 }
