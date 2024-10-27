@@ -3,6 +3,7 @@ Snowflake[] snowflakes = new Snowflake[numSnowflakes];
 
 Wall wall;
 Window window;
+ChristmasHouse house;
 
 void setup() {
   
@@ -10,6 +11,7 @@ void setup() {
   
   wall = new Wall();
   window = new Window();
+  house = new ChristmasHouse(800, 450, 200, 300);
   
   // Create all snowflakes
   for (int i = 0; i < numSnowflakes; i++) {
@@ -24,7 +26,8 @@ void draw() {
   
   fill(0);
   rect(window.x, window.y, window.diameterX, window.diameterY); // Set inside display window dark
-  
+
+  house.display();
   window.display();
 
 
