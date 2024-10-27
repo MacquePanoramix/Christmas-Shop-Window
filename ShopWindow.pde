@@ -6,6 +6,7 @@ Window window;
 
 SnowHills snowHills;
 ChristmasHouse house;
+Sleigh sleigh;
 
 
 void setup() {
@@ -14,6 +15,7 @@ void setup() {
   
   wall = new Wall();
   window = new Window();
+  sleigh = new Sleigh();
   
   snowHills = new SnowHills(window.x, window.y, window.diameterX, window.diameterY);
   house = new ChristmasHouse(700, 340, 200, 300);
@@ -38,6 +40,9 @@ void draw() {
   }
   
   house.display();
+
+  sleigh.update();
+  sleigh.display();
   
   snowHills.display(); 
   
