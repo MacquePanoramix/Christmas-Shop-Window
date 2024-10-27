@@ -9,7 +9,7 @@ class Sleigh {
   Sleigh() {
     this.trainColor = color(80, 80, 80);        // Gray for the train engine
     this.sleighColor = color(255, 0, 0);        // Red for the sleigh
-    this.wheelColor = color(0);                 // Black for wheels
+    this.wheelColor = color(255);                 // white for wheels
     this.connectionColor = color(255, 0, 0);    // Red for connecting line
     respawn();
   }
@@ -68,7 +68,7 @@ class Sleigh {
     // Draw wheels on the sleigh
     fill(wheelColor);
     ellipse(-60, 20, 10, 10);                 // Left wheel of sleigh
-    ellipse(-80, 20, 10, 10);                 // Right wheel of sleigh
+    ellipse(-40, 20, 10, 10);                 // Right wheel of sleigh
 
     // Draw connecting red line between train head and sleigh
     stroke(connectionColor);
