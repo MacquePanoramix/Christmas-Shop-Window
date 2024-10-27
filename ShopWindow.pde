@@ -49,5 +49,12 @@ void draw() {
   window.display();
 
 
+void mousePressed() {
+  
+  // this is the light toggle at top window
+  if (house.isTopWindowClicked(mouseX, mouseY)) {
+    house.toggleTopWindowLight();
+  }
+
   
 }
