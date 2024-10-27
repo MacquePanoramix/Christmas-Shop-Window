@@ -100,6 +100,16 @@ class ChristmasHouse {
     ellipse(bellX + bellWidth / 3, bellY - bellHeight / 3, bellWidth / 5, bellHeight / 3);
   }
 
+  boolean isTopWindowClicked(float mouseX, float mouseY) {
+    float windowWidth = w / 6;
+    float windowHeight = h / 6;
+    float topWindowX = x + w / 2 - windowWidth / 2;
+    float topWindowY = y + h / 8;
+
+    return mouseX >= topWindowX && mouseX <= topWindowX + windowWidth &&
+           mouseY >= topWindowY && mouseY <= topWindowY + windowHeight;
+  }
+
   void toggleTopWindowLight() {
     isTopWindowLit = !isTopWindowLit;
   }
