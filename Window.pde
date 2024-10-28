@@ -1,3 +1,8 @@
+// Luís De Albuquerque Hollanda || TzuLing Lin
+// Group 9
+
+// Class page for window frame and visual effects to give window impression on shop window
+
 class Window {
   int x, y; // Window top-left coordinates
   int diameterX; // Width
