@@ -1,3 +1,8 @@
+// Luís De Albuquerque Hollanda || TzuLing Lin
+// Group 9
+
+//Class page for the snowy hills that serve as the ground of the shop window
+
 class SnowHills {
 
   float x, y;
