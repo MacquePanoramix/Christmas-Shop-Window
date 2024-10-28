@@ -1,3 +1,8 @@
+// Luís De Albuquerque Hollanda || TzuLing Lin
+// Group 9
+
+// Class page for the outter wall background
+
 class Wall {
   
   PImage img;
