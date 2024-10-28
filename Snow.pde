@@ -1,6 +1,8 @@
 // Luís De Albuquerque Hollanda || TzuLing Lin
 // Group 9
 
+//Class page for displaying snowflake and dictating how it should move on the screen
+
 class Snowflake {
   
   float x, y;      
