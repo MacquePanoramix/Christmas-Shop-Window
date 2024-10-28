@@ -1,3 +1,6 @@
+// Luís De Albuquerque Hollanda || TzuLing Lin
+// Group 9
+
 class Snowflake {
   
   float x, y;      
