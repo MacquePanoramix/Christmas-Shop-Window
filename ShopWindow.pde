@@ -1,6 +1,9 @@
 // Luís De Albuquerque Hollanda || TzuLing Lin
 // Group 9
 
+// Main program page displaying the Christmas Shop window and it's interactions
+// For more information on the possible interactions check ChritmasLights.pde, House.pde and Music_box.pde
+
 import processing.sound.*; // remember to import "sound" library if you want the music to work when clicking on the radio!
 
 int numSnowflakes = 200;
