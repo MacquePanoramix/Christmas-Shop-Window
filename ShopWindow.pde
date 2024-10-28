@@ -27,7 +27,7 @@ void setup() {
   
   wall = new Wall();
   window = new Window();
-  sleigh = new Sleigh();
+  sleigh = new Sleigh(window.x, window.diameterX+window.x);
   
   snowHills = new SnowHills(window.x, window.y, window.diameterX, window.diameterY);
   house = new ChristmasHouse(700, 340, 200, 300); // house position and size
