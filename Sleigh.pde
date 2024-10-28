@@ -13,7 +13,12 @@ class Sleigh {
   int respawnDelay;                                 // respawn time delay
   int lastDespawnTime;                              // keeps track of despawns
 
+  float range1, range2; // Shop window area
+
   Sleigh() {
+    this.range1 = range1;
+    this.range2 = range2;
+
     this.trainColor = color(80, 80, 80);            // train engine is grey
     this.sleighColor = color(255, 0, 0);            // sleigh is red
     this.wheelColor = color(255);                   // wheels are white 👍
@@ -49,6 +54,7 @@ class Sleigh {
   }
 
   void display() {
+if(x > range1+50 && x < range2-50){ // offset a bit to make sure is inside window
     pushMatrix();
     translate(x, y);
 
@@ -78,6 +84,7 @@ class Sleigh {
     noStroke();
     
     popMatrix();
+  }
   }
 }
 
