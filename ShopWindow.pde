@@ -49,7 +49,7 @@ void draw() {
   musicBox.display();
   snowHills.display(); 
   window.display();
-
+}
 
 void mousePressed() {
   
@@ -61,5 +61,5 @@ void mousePressed() {
  // this is the music toggle at musicbox
   if (musicBox.isMouseOver(mouseX, mouseY)) {
     musicBox.toggleMusic();
-  
+  }
 }
