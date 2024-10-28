@@ -1,3 +1,6 @@
+// Luís De Albuquerque Hollanda || TzuLing Lin
+// Group 9
+
 class Sleigh {
   float x, y;            // Position of the sleigh
   float speed;           // Speed of the sleigh
