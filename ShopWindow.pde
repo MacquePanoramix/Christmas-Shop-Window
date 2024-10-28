@@ -1,5 +1,5 @@
-// Names
-// Group name (number?)
+// Luís De Albuquerque Hollanda || TzuLing Lin
+// Group 9
 
 import processing.sound.*; // remember to import "sound" library if you want the music to work when clicking on the radio!
 
