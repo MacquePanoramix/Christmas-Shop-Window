@@ -1,3 +1,6 @@
+// Names
+// Group name (number?)
+
 import processing.sound.*; // remember to import "sound" library if you want the music to work when clicking on the radio!
 
 int numSnowflakes = 200;
