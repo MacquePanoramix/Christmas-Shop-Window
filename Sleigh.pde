@@ -2,46 +2,47 @@
 // Group 9
 
 // Class page for the sleigh thast is shown flying from one side to the other on top of the christmas shop window
+// nothing adjustable, should be constant
+// doesnt fully work yet as of october 28 xd
 
 class Sleigh {
-  float x, y;            // Position of the sleigh
-  float speed;           // Speed of the sleigh
+  float x, y;                                       // positions of the sleigh
+  float speed;                                      // speed float
   color trainColor, sleighColor, wheelColor, connectionColor;
-  boolean movingLeft;    // Direction of movement
-  int respawnDelay;      // Time to wait before respawning
-  int lastDespawnTime;
+  boolean movingLeft;                               // directrion boolean
+  int respawnDelay;                                 // respawn time delay
+  int lastDespawnTime;                              // keeps track of despawns
 
   Sleigh() {
-    this.trainColor = color(80, 80, 80);        // Gray for the train engine
-    this.sleighColor = color(255, 0, 0);        // Red for the sleigh
-    this.wheelColor = color(255);                 // white for wheels
-    this.connectionColor = color(255, 0, 0);    // Red for connecting line
+    this.trainColor = color(80, 80, 80);            // train engine is grey
+    this.sleighColor = color(255, 0, 0);            // sleigh is red
+    this.wheelColor = color(255);                   // wheels are white 👍
+    this.connectionColor = color(255, 0, 0);        // red conneting cable thingy
     respawn();
   }
 
   void respawn() {
-    y = random(height / 4, height / 2);         // Keep y above half of the screen
-    speed = random(2, 4);                       // Random speed for variety
-    movingLeft = random(1) > 0.5;               // Randomly decide direction
+    y = random(height / 4, height / 2);             // keep sleigh's y above half of the screen so its flying
+    speed = random(2, 4);                           // random sleigh speed
+    movingLeft = random(1) > 0.5;                   // random sleigh direction when spawning
 
-    if (movingLeft) {
-      x = width + 100;                          // Start off-screen to the right
-      speed = -abs(speed);                      // Move to the left
+    if (movingLeft) {                               // if boolean so sleigh can go both ways
+      x = width + 100;                              // spawn out of canvas from right
+      speed = -speed;                               // moves to the left
     } else {
-      x = -100;                                 // Start off-screen to the left
-      speed = abs(speed);                       // Move to the right
+      x = -100;                                     // spawn out of canvas from left
+      speed = speed;                                // moves to the right
     }
     
-    lastDespawnTime = millis();                 // Track when it despawns
-    respawnDelay = int(random(3000, 7000));     // 3-7 seconds random delay
+    lastDespawnTime = millis();                     // tracks last despawn time
+    respawnDelay = int(random(3000, 7000));         // give a random tick between 3000 and 7000 (3 to 7 seconds), this doenst really work lol
   }
 
   void update() {
-    x += speed;  // Move the sleigh horizontally
+    x += speed;                                     // move the sleigh horizontally
 
-    // Check if the sleigh has left the screen
-    if ((movingLeft && x < -100) || (!movingLeft && x > width + 100)) {
-      if (millis() - lastDespawnTime >= respawnDelay) {
+    if ((movingLeft && x < -100) || (!movingLeft && x > width + 100)) {    // check for the sleigh has left the screen
+      if (millis() - lastDespawnTime >= respawnDelay) {  // man 
         respawn();  // Respawn after the delay
       }
     }
@@ -52,35 +53,31 @@ class Sleigh {
     translate(x, y);
 
     if (movingLeft) {
-      scale(-1, 1);  // Flip horizontally when moving left
+      scale(-1, 1);                                 // flip horizontally when moving left to look nice
     }
 
-    // Draw the train engine
-    fill(trainColor);
-    rect(0, -10, 50, 30);                    // Train engine body
-    fill(150);                                // Light gray for chimney
-    rect(35, -30, 10, 20);                    // Chimney on top
+    fill(trainColor);                               // draw train engine
+    rect(0, -10, 50, 30);
+    fill(150);
+    rect(35, -30, 10, 20);
 
-    // Draw wheels on the train engine
-    fill(wheelColor);                         // Black wheels
-    ellipse(15, 25, 15, 15);                  // Front wheel
-    ellipse(35, 25, 15, 15);                  // Back wheel
+    fill(wheelColor);                               // draw train wheels
+    ellipse(15, 25, 15, 15);
+    ellipse(35, 25, 15, 15);
 
-    // Draw the sleigh attached behind
-    fill(sleighColor);
-    rect(-70, 0, 40, 20);                     // Sleigh body behind the train
+    fill(sleighColor);                              // draw sleigh conneted to train
+    rect(-70, 0, 40, 20);
 
-    // Draw wheels on the sleigh
-    fill(wheelColor);
-    ellipse(-60, 20, 10, 10);                 // Left wheel of sleigh
-    ellipse(-40, 20, 10, 10);                 // Right wheel of sleigh
+    fill(wheelColor);                               // draw sleigh wheels
+    ellipse(-60, 20, 10, 10);
+    ellipse(-40, 20, 10, 10);
 
-    // Draw connecting red line between train head and sleigh
-    stroke(connectionColor);
+    stroke(connectionColor);                        // draw connetion between train and sleih
     strokeWeight(2);
-    line(5, 10, -65, 10);                     // Connecting line
+    line(5, 10, -65, 10);
     noStroke();
     
-    popMatrix();  // Restore original orientation
+    popMatrix();
   }
 }
+
