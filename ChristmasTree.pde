@@ -1,3 +1,8 @@
+// Luís De Albuquerque Hollanda || TzuLing Lin
+// Group 9
+
+// Class page for christmas tree displayed on the shop window
+
 class ChristmasTree {
   
   float x, y;       // tree coordinates
