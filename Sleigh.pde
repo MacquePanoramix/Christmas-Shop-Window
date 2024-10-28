@@ -15,7 +15,7 @@ class Sleigh {
 
   float range1, range2; // Shop window area
 
-  Sleigh() {
+  Sleigh(float range1, float range2) {
     this.range1 = range1;
     this.range2 = range2;
 
