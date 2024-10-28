@@ -1,3 +1,10 @@
+// Luís De Albuquerque Hollanda || TzuLing Lin
+// Group 9
+
+// Class page for christmas lights on the christmas tree
+// Has a total of 5 different blinking patterns to alternate from
+// Click with the mouse on the christmas tree to alternate between them
+
 class ChristmasLights {
   
   float[] lightX;        // x positions of the lights
