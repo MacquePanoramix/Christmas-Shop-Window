@@ -1,6 +1,8 @@
 // Luís De Albuquerque Hollanda || TzuLing Lin
 // Group 9
 
+// Class page for the sleigh thast is shown flying from one side to the other on top of the christmas shop window
+
 class Sleigh {
   float x, y;            // Position of the sleigh
   float speed;           // Speed of the sleigh
